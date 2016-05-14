@@ -1,0 +1,21 @@
+{
+    "name": "kubawerlos/html-validator",
+    "description": "Lightweight library for HTML validation against Validator.nu",
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "KubaWerlos\\HtmlValidator\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

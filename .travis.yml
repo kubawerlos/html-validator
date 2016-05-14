@@ -1,0 +1,22 @@
+install:
+    - composer install --no-interaction --prefer-source
+
+language: php
+
+notifications:
+    email: false
+
+php:
+    - '5.3'
+    - '5.4'
+    - '5.5'
+    - '5.6'
+    - '7.0'
+    - nightly
+
+script:
+    - ./bin/phpcs --extensions=php --report-full --standard=PSR2 ./src/
+    - ./bin/phpcs --extensions=php --report-full --standard=PSR2 ./tests/
+    - ./bin/phpunit --no-coverage
+
+sudo: false
