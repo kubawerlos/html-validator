@@ -12,7 +12,13 @@ class ValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function validateCorrectHtml()
     {
-        $this->assertEmpty(Validator::validate('<!doctype html><html><head><title>t</title></head></html>'));
+        $html = '<!doctype html><html><head><title>t</title></head><body><table>';
+        foreach (range(1, 1000) as $i) {
+            $html .= "<tr><td>$i</td></tr>";
+        }
+        $html .= '</table></body></html>';
+
+        $this->assertEmpty(Validator::validate($html));
     }
 
     /**

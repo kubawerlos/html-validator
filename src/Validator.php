@@ -13,7 +13,7 @@ class Validator
      */
     public static function validate($html)
     {
-        $curlHandler = curl_init('https://validator.nu/?out=gnu');
+        $curlHandler = curl_init('https://checker.html5.org/?out=gnu');
 
         curl_setopt($curlHandler, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($curlHandler, CURLOPT_SSL_VERIFYPEER, false);
