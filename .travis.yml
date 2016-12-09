@@ -1,5 +1,11 @@
-install:
-    - composer install --no-interaction --prefer-source
+git:
+    depth: 1
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+sudo: false
 
 language: php
 
@@ -7,16 +13,18 @@ notifications:
     email: false
 
 php:
-    - '5.3'
-    - '5.4'
-    - '5.5'
     - '5.6'
     - '7.0'
-    - nightly
+    - '7.1'
+    - 'nightly'
+
+before_install:
+    - (phpenv config-rm xdebug.ini || exit 0)
+    - composer self-update
+
+install:
+    - composer require --dev phpunit/phpunit squizlabs/php_codesniffer
 
 script:
-    - ./bin/phpcs --extensions=php --report-full --standard=PSR2 ./src/
-    - ./bin/phpcs --extensions=php --report-full --standard=PSR2 ./tests/
-    - ./bin/phpunit
-
-sudo: false
+    - vendor/bin/phpcs --report-full --standard=PSR2 src tests
+    - vendor/bin/phpunit -c tests/phpunit.xml

@@ -1,26 +1,20 @@
-KubaWerlos / HTML Validator
-===========================
+# Kuba Werłos / HTML validator
 
-[![Latest Stable Version](https://poser.pugx.org/kubawerlos/html-validator/v/stable)](https://packagist.org/packages/kubawerlos/html-validator)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.3-8892BF.svg)](https://php.net)
-[![License](https://poser.pugx.org/kubawerlos/html-validator/license)](https://packagist.org/packages/kubawerlos/html-validator)
-[![Build Status](https://travis-ci.org/kubawerlos/html-validator.svg?branch=master)](https://travis-ci.org/kubawerlos/html-validator)
+[![Latest Stable Version](https://img.shields.io/packagist/v/kubawerlos/html-validator.svg)](https://packagist.org/packages/kubawerlos/html-validator)
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)](https://php.net)
+[![License](https://img.shields.io/github/license/kubawerlos/html-validator.svg)](https://packagist.org/packages/kubawerlos/html-validator)
+[![Build Status](https://img.shields.io/travis/kubawerlos/html-validator/master.svg)](https://travis-ci.org/kubawerlos/html-validator)
 
-Lightweight library for HTML validation against Validator.nu
+Simple PHP library for HTML validation against https://checker.html5.org
 
-Installation
-------------
+## Installation
+```bash
+    composer require --dev kubawerlos/html-validator
+```
 
-    composer require kubawerlos/html-validator
-
-
-Usage
------
-
+## Usage
 ```php
-<?php
+    use KubaWerlos\HtmlValidator\Validator;
 
-use KubaWerlos\HtmlValidator\Validator;
-
-assertEmpty(Validator::validate(file_get_contents('index.html')));
+    assertEmpty(Validator::validate(file_get_contents('index.html')));
 ```
