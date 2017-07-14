@@ -1,7 +1,7 @@
 {
     "name": "kubawerlos/html-validator",
-    "type": "library",
     "description": "Simple PHP library for HTML validation against https://checker.html5.org",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -9,12 +9,14 @@
             "email": "werlos@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=5.6",
+        "ext-curl": "*",
+        "ext-mbstring": "*"
+    },
     "autoload": {
         "psr-4": {
             "KubaWerlos\\HtmlValidator\\": "src/"
         }
-    },
-    "require": {
-        "php": ">=5.6"
     }
 }

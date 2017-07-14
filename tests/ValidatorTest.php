@@ -3,9 +3,9 @@
 namespace Tests;
 
 use KubaWerlos\HtmlValidator\Validator;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class ValidatorTest extends PHPUnit_Framework_TestCase
+class ValidatorTest extends TestCase
 {
     /**
      * @test
