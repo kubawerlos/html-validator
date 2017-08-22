@@ -24,7 +24,7 @@ class Validator
         curl_setopt($curlHandler, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)');
         curl_setopt($curlHandler, CURLOPT_HTTPHEADER, [
             'Content-type: text/html; charset=utf-8',
-            'Content-Length: ' . mb_strlen($html),
+            'Content-Length: ' . strlen($html),
         ]);
 
         $result = curl_exec($curlHandler);
